@@ -1,0 +1,20 @@
+<div class = "row">
+    {{#each events}}
+    <div class="card" style="width: 10rem;">
+        <button  type="button" class="btn btn-outline-primary" id = {{id}}>{{id}}</button>
+            {{#if event}}
+            {{#each event}}
+                <a href = "/event/{{id}}/{{title}}">{{title}}</a>
+            {{/each}}
+        {{/if}}
+    </div>
+    {{/each}}
+</div>
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            let href = '/addEvent/' + this.id;
+            location.href = href;
+        })
+    })
+</script>

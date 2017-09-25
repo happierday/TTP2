@@ -1,0 +1,54 @@
+<div id = "info">
+    {{#with event}}
+    <p id = "id">2/{{id}}</p>
+    <p id = "title">Title: {{title}}</p>
+    <p id = "startTime">Start Time: {{startTime}}</p>
+    <p id = "endTime">End Time: {{endTime}}</p>
+    <p id = "description">Description: {{description}}</p>
+    {{/with}}
+</div>
+<div id = "newUp">
+    <form method = "post">
+        <input id = "newTitle" name = "newTitle">
+        <br>
+        <input id = "newStartTime" name = "newStartTime">
+        <input id = "newEndTime" name = "newEndTime">
+        <br>
+        <textarea cols="30" rows="10" id = "newDescription" name = "newDescription"></textarea>
+        <br>
+        <button type = "submit" value = "update" name = "button">update</button>
+    </form>
+</div>
+<button id = "update" onclick =  "update()">update</button>
+<form method="post" id = "second">
+    <button type = "submit" value = "delete" name = "button">delete</button>
+</form>
+
+
+<script>
+    $(document).ready(function(){
+
+        $('#info').show();
+        $('#newUp').hide();
+
+    })
+    function update(){
+        
+        const div = document.getElementById('info');
+        const newUp = document.getElementById('newUp');
+        const newId = document.getElementById('newId');
+        const newTitle = document.getElementById('newTitle');
+        const newStartTime = document.getElementById('newStartTime');
+        const newEndTime = document.getElementById('newEndTime');
+        const newDescription = document.getElementById('newDescription');
+
+        newTitle.value =  $('#title').text().substring( $('#title').text().indexOf(':')+2);
+        newStartTime.value =  $('#startTime').text().substring( $('#startTime').text().indexOf(':')+2);
+        newEndTime.value = $('#endTime').text().substring( $('#endTime').text().indexOf(':')+2);
+        newDescription.value =  $('#description').text().substring( $('#description').text().indexOf(':')+2);
+        div.style.display  = "none";
+        newUp.style.display = "block";
+        $('#update').hide();
+        $('#second').hide();
+    }
+</script>

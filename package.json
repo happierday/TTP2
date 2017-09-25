@@ -1,0 +1,19 @@
+{
+  "name": "ttp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./CalendarBackEnd/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.3",
+    "mongoose": "^4.11.12",
+    "path": "^0.12.7"
+  }
+}
