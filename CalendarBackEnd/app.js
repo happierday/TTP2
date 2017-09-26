@@ -5,13 +5,20 @@ const addEvent = require('./route/addEvent');
 const index = require('./route/index');
 const path = require('path');
 const event = require('./route/event');
+const eventDetail = require('./model/eventDetail');
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/events');
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
-
+    //generate entries
+    for(let i = 1;i<=28;i++){
+        let newEvent= new eventDetail({id:i});
+        newEvent.save((err)=>{   
+        })
+    }
+    return;
 });
 
 const app = express ();
