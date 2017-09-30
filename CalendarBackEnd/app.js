@@ -13,12 +13,18 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
     //generate entries
-    for(let i = 1;i<=28;i++){
-        let newEvent= new eventDetail({id:i});
-        newEvent.save((err)=>{   
-        })
-    }
-    return;
+    eventDetail.findOne({id:1},(err,event)=>{
+        if(event!=null){
+            console.log("already existed");
+        }else{
+            for(let i = 1;i<=28;i++){
+                let newEvent= new eventDetail({id:i});
+                
+                newEvent.save((err)=>{  
+                })
+            }
+        }
+    })
 });
 
 const app = express ();
