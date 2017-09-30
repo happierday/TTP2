@@ -10,6 +10,6 @@ In order to start, there are few things to be aware:
 
 3:config mongod --dbpath to set where the mongdb databases going to be, ex: mongod --dbpath D:\data
 
-4: install nodemon gloablly and run nodemon cmd
+4: npm install nodemon -g to install nodemon gloablly and type nodemon in cmd prompt
 
 5: in the browser, type localhost:8000
